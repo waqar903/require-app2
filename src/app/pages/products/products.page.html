@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Products</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <ion-row *ngIf="productList">
+      <ion-col size-xl="12" size-md="12" size-xs="12" class="ion-text-center">
+        <ion-button
+          size="small"
+          expand="block"
+          color="primary mr-1"
+          style="max-width: 10rem"
+          class="ion-float-right"
+          (click)="addProduct()"
+          >Add New Product</ion-button
+        >
+      </ion-col>
+      <ion-col
+        *ngFor="let product of productList; trackBy:_product_service.identify; let i=index"
+        size-xl="12"
+        size-md="12"
+        size-xs="12"
+        class="ion-text-center"
+      >
+        <ion-card class="card" mode="ios">
+          <ion-grid class="p-0">
+            <ion-row class="d-align-c">
+              <ion-col size-md="8" size="8" class="ion-text-left">
+                <h6 class="ion-no-margin text_hide_2">
+                  {{ product?.product_name }}
+                </h6>
+                <p class="text_hide_2">SKU: {{ product?.sku }}</p>
+                <p class="text_hide_2">Stock: {{ product?.stock }}</p>
+              </ion-col>
+              <ion-col
+                size-md="4"
+                size="4"
+                class="ion-text-left d-align-c ion-justify-content-end"
+              >
+                <ion-button
+                  (click)="updateProduct(product)"
+                  size="small"
+                  expand="block"
+                  color="secondary mr-1"
+                  >Edit</ion-button
+                >
+                <ion-button
+                  (click)="deleteConfirm(product.id)"
+                  size="small"
+                  expand="block"
+                  color="danger"
+                  >Delete</ion-button
+                >
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-grid *ngIf="productList?.length == 0">
+      <ion-row>
+        <ion-col class="ion-justify-content-center ion-text-center">
+          <p class="ion-text-center" color="dark">No record found!</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
