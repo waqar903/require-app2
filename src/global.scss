@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,3 +24,47 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.add-product-modal {
+  --height: 40%;
+  align-items: center;
+}
+.d-align-c {
+  display: flex;
+  align-items: center;
+}
+@media only screen and (min-width: 768px) and (min-height: 600px) {
+  /* CSS stuff */
+
+  .add-product-modal {
+    --height: 24rem;
+    align-items: center;
+  }
+  .product {
+    max-height: calc(16rem) !important;
+    overflow: auto;
+  }
+}
+
+@media only screen and (max-width: 768px) and (min-height: 600px) {
+  /* CSS stuff */
+
+  .add-product-modal {
+    --height: 32rem;
+    align-items: end;
+  }
+  .product {
+    max-height: calc(24rem) !important;
+    overflow: auto;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .add-product-modal {
+    --height: 32rem;
+    align-items: end;
+  }
+  .product {
+    max-height: calc(24rem) !important;
+    overflow: auto;
+  }
+}

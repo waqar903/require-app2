@@ -1,0 +1,30 @@
+.text_hide_2 {
+  font-size: 0.75rem;
+  color: rgb(120, 120, 120);
+  margin: 5px 0;
+  line-height: 1.5em;
+  /* Sets line height to 1.5 times text size */
+  max-height: 3em;
+  /* Sets the div height to 2x line-height (3 times text size) */
+  width: 100%;
+  /* Use whatever width you want */
+  white-space: normal;
+  /* Wrap lines of text */
+  overflow: hidden;
+  /* Hide text that goes beyond the boundaries of the div */
+  text-overflow: ellipsis;
+  /* Ellipses (cross-browser) */
+  -o-text-overflow: ellipsis;
+  /* Ellipses (cross-browser) */
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  max-width: 100%;
+}
+.card {
+  border-radius: 4px;
+  background-color: white !important;
+  overflow: hidden;
+  margin-inline: 10px;
+  margin-block: 0;
+}
