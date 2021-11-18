@@ -1,0 +1,241 @@
+<div class="cart-modal">
+  <div class="cart-content d-align-c" style="border-bottom: 1px solid #ddd">
+    <ion-col size="6" class="ion-padding ion-text-left">
+      <h5 class="item-name verticaly_wrap font-bold">
+        {{ item ? "Update" : "New" }} Product
+      </h5>
+    </ion-col>
+    <ion-col size="6" class="ion-padding ion-text-right">
+      <ion-button fill="clear" (click)="dismiss()" size="small" color="dark"
+        ><ion-icon name="close-outline"></ion-icon
+      ></ion-button>
+    </ion-col>
+  </div>
+  <div class="product">
+    <form [formGroup]="productForm">
+      <ion-list lines="none" class="ion-padding">
+        <!-- product_name -->
+        <div class="form-container">
+          <ion-item>
+            <ion-label color="dark" position="floating">Name </ion-label>
+            <ion-input
+              color="dark"
+              type="text"
+              placeholder="(i.e Product Name)"
+              formControlName="product_name"
+            ></ion-input>
+          </ion-item>
+        </div>
+        <div
+          *ngIf="
+            formName.controls.product_name.invalid &&
+            (formName.controls.product_name.dirty ||
+              formName.controls.product_name.touched)
+          "
+          class="alert alert-danger"
+        >
+          <div *ngIf="formName.controls.product_name.errors.required">
+            <span class="error_message" padding>{{ "Name is required" }}</span>
+          </div>
+        </div>
+
+        <!-- barcode -->
+        <div class="form-container">
+          <ion-item>
+            <ion-label color="dark" position="floating">Barcode </ion-label>
+            <ion-input
+              color="dark"
+              type="text"
+              placeholder="(i.e barcode)"
+              formControlName="barcode"
+            ></ion-input>
+          </ion-item>
+        </div>
+        <div
+          *ngIf="
+            formName.controls.barcode.invalid &&
+            (formName.controls.barcode.dirty ||
+              formName.controls.barcode.touched)
+          "
+          class="alert alert-danger"
+        >
+          <div *ngIf="formName.controls.barcode.errors.required">
+            <span class="error_message" padding>{{
+              "barcode is required"
+            }}</span>
+          </div>
+        </div>
+
+        <!-- sku -->
+        <div class="form-container">
+          <ion-item>
+            <ion-label color="dark" position="floating">SKU </ion-label>
+            <ion-input
+              color="dark"
+              type="text"
+              placeholder="(i.e sku)"
+              formControlName="sku"
+            ></ion-input>
+          </ion-item>
+        </div>
+        <div
+          *ngIf="
+            formName.controls.sku.invalid &&
+            (formName.controls.sku.dirty || formName.controls.sku.touched)
+          "
+          class="alert alert-danger"
+        >
+          <div *ngIf="formName.controls.sku.errors.required">
+            <span class="error_message" padding>{{ "SKU is required" }}</span>
+          </div>
+        </div>
+
+        <!-- price -->
+        <div class="form-container">
+          <ion-item>
+            <ion-label color="dark" position="floating">Price </ion-label>
+            <ion-input
+              color="dark"
+              type="number"
+              placeholder="(i.e 0.00)"
+              formControlName="price"
+            ></ion-input>
+          </ion-item>
+        </div>
+        <div
+          *ngIf="
+            formName.controls.price.invalid &&
+            (formName.controls.price.dirty || formName.controls.price.touched)
+          "
+          class="alert alert-danger"
+        >
+          <div *ngIf="formName.controls.price.errors.required">
+            <span class="error_message" padding>{{ "price is required" }}</span>
+          </div>
+        </div>
+
+        <!-- stock -->
+        <div class="form-container">
+          <ion-item>
+            <ion-label color="dark" position="floating">stock </ion-label>
+            <ion-input
+              color="dark"
+              type="number"
+              placeholder="(i.e 123)"
+              formControlName="stock"
+            ></ion-input>
+          </ion-item>
+        </div>
+        <div
+          *ngIf="
+            formName.controls.stock.invalid &&
+            (formName.controls.stock.dirty || formName.controls.stock.touched)
+          "
+          class="alert alert-danger"
+        >
+          <div *ngIf="formName.controls.stock.errors.required">
+            <span class="error_message" padding>{{ "stock is required" }}</span>
+          </div>
+        </div>
+
+        <!-- stock -->
+        <div class="form-container">
+          <ion-item>
+            <ion-label color="dark" position="floating">isbn </ion-label>
+            <ion-input
+              color="dark"
+              type="text"
+              placeholder="(i.e 123)"
+              formControlName="isbn"
+            ></ion-input>
+          </ion-item>
+        </div>
+        <div
+          *ngIf="
+            formName.controls.isbn.invalid &&
+            (formName.controls.isbn.dirty || formName.controls.isbn.touched)
+          "
+          class="alert alert-danger"
+        >
+          <div *ngIf="formName.controls.isbn.errors.required">
+            <span class="error_message" padding>{{ "isbn is required" }}</span>
+          </div>
+        </div>
+
+        <!-- asin -->
+        <div class="form-container">
+          <ion-item>
+            <ion-label color="dark" position="floating">asin </ion-label>
+            <ion-input
+              color="dark"
+              type="text"
+              placeholder="(i.e 123)"
+              formControlName="asin"
+            ></ion-input>
+          </ion-item>
+        </div>
+        <div
+          *ngIf="
+            formName.controls.asin.invalid &&
+            (formName.controls.asin.dirty || formName.controls.asin.touched)
+          "
+          class="alert alert-danger"
+        >
+          <div *ngIf="formName.controls.asin.errors.required">
+            <span class="error_message" padding>{{ "asin is required" }}</span>
+          </div>
+        </div>
+
+        <!-- ean13 -->
+        <div class="form-container">
+          <ion-item>
+            <ion-label color="dark" position="floating">ean13 </ion-label>
+            <ion-input
+              color="dark"
+              type="text"
+              placeholder="(i.e 123)"
+              formControlName="ean13"
+            ></ion-input>
+          </ion-item>
+        </div>
+        <div
+          *ngIf="
+            formName.controls.ean13.invalid &&
+            (formName.controls.ean13.dirty || formName.controls.ean13.touched)
+          "
+          class="alert alert-danger"
+        >
+          <div *ngIf="formName.controls.ean13.errors.required">
+            <span class="error_message" padding>{{ "ean13 is required" }}</span>
+          </div>
+        </div>
+      </ion-list>
+    </form>
+  </div>
+  <div class="product-actions">
+    <ion-grid class="ion-padding-horizontal">
+      <ion-row class="d-align-c">
+        <ion-col size="12">
+          <ion-button
+            color="primary"
+            *ngIf="!item"
+            [disabled]="!productForm.valid"
+            size="small"
+            shape="round"
+            (click)="addProduct()"
+            >Create</ion-button
+          >
+          <ion-button
+            color="primary"
+            *ngIf="item"
+            [disabled]="!productForm.valid"
+            size="small"
+            shape="round"
+            (click)="updateProduct()"
+            >Update</ion-button
+          >
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+.border_dropdown {
+  margin: 10px 1em;
+}
+p {
+  margin: 0;
+}
+.border_box {
+  padding: 1em;
+}
+.center-input {
+  margin: 5px auto;
+}
+h5 {
+  margin: 0;
+}
+
+.form-container ion-item {
+  --padding-start: 0;
+  --border-color: #dadada;
+  border-bottom: 1px solid #dadada;
+}
+
+.form-container ion-item ion-label {
+  color: #a6a6a6;
+}
+
+.form-container ion-item ion-icon {
+  margin-top: auto;
+  color: #c6cbd4;
+}
+
+.form-container ion-button {
+  margin-top: 48px;
+}
+.product {
+  max-height: calc(100% - 12rem);
+  overflow: auto;
+}
+.remove_input_style {
+  width: 100%;
+  border: 0;
+  padding: 2rem 0 0.5rem 0;
+  background: transparent;
+}
