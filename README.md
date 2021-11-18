@@ -1,12 +1,3 @@
-##IONIC_5 Product CRUD
-
-
-## Install
-- npm i
-## Run on Browser
-- ionic s -o
-
-
 ## IONIC_5 Product CRUD APP
 
 ## Compile from source
